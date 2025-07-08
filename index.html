@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime World - Discover Your Next Favorite Series</title>
+    <meta name="description" content="Discover the best anime series, explore genres, and join our community of anime enthusiasts.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎌</text></svg>">
+</head>
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent hidden">
+        <div class="cookie-content">
+            <p>This site uses cookies to enhance your experience. 🍪</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn btn-primary">Accept</button>
+                <button id="decline-cookies" class="btn btn-secondary">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="#home">
+                        <span class="logo-icon">🎌</span>
+                        <span class="logo-text">Anime World</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#popular" class="nav-link">Popular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#genres" class="nav-link">Genres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#register" class="nav-link">Join Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Hamburger -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <span class="mobile-logo">🎌 Anime World</span>
+                <button class="close-menu">&times;</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#home" class="mobile-nav-link">Home</a></li>
+                <li><a href="#popular" class="mobile-nav-link">Popular</a></li>
+                <li><a href="#genres" class="mobile-nav-link">Genres</a></li>
+                <li><a href="#register" class="mobile-nav-link">Join Us</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Amazing Anime</h1>
+                <p class="hero-subtitle">Explore thousands of anime series, connect with fellow fans, and dive into incredible stories</p>
+                <div class="hero-buttons">
+                    <a href="#popular" class="btn btn-primary">Explore Now</a>
+                    <a href="#register" class="btn btn-outline">Join Community</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-placeholder">🎭</div>
+            </div>
+        </section>
+
+        <!-- Popular Anime Section -->
+        <section id="popular" class="popular-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Popular Anime</h2>
+                    <p class="section-subtitle">Discover what everyone's watching</p>
+                </header>
+                
+                <div class="loading-spinner" id="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading awesome anime...</p>
+                </div>
+                
+                <div class="error-message hidden" id="error-message">
+                    <p>❌ Failed to load anime data. Please try again later.</p>
+                </div>
+                
+                <div class="anime-grid" id="anime-grid">
+                    <!-- Anime cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Genres Section -->
+        <section id="genres" class="genres-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Explore Genres</h2>
+                    <p class="section-subtitle">Find your perfect anime by genre</p>
+                </header>
+                
+                <div class="genre-selector">
+                    <select id="genre-dropdown" class="genre-dropdown">
+                        <option value="">Select a genre</option>
+                        <option value="action">Action</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="drama">Drama</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="romance">Romance</option>
+                        <option value="sci-fi">Sci-Fi</option>
+                        <option value="thriller">Thriller</option>
+                    </select>
+                </div>
+                
+                <div class="genre-grid">
+                    <article class="genre-card">
+                        <div class="genre-icon">⚔️</div>
+                        <h3>Action</h3>
+                        <p>High-octane adventures and epic battles</p>
+                    </article>
+                    <article class="genre-card">
+                        <div class="genre-icon">💕</div>
+                        <h3>Romance</h3>
+                        <p>Heartwarming love stories</p>
+                    </article>
+                    <article class="genre-card">
+                        <div class="genre-icon">😂</div>
+                        <h3>Comedy</h3>
+                        <p>Laugh-out-loud entertainment</p>
+                    </article>
+                    <article class="genre-card">
+                        <div class="genre-icon">🔮</div>
+                        <h3>Fantasy</h3>
+                        <p>Magical worlds and mystical adventures</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="register-section">
+            <div class="container">
+                <div class="register-content">
+                    <div class="register-info">
+                        <h2 class="section-title">Join Our Community</h2>
+                        <p class="section-subtitle">Connect with fellow anime enthusiasts worldwide</p>
+                        <ul class="benefits-list">
+                            <li>🎯 Personalized recommendations</li>
+                            <li>💬 Join discussions and forums</li>
+                            <li>⭐ Rate and review anime</li>
+                            <li>📱 Get notified about new releases</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="register-form-container">
+                        <form id="registration-form" class="registration-form" novalidate>
+                            <h3>Create Your Account</h3>
+                            
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="password-container">
+                                    <input type="password" id="password" name="password" required>
+                                    <button type="button" class="password-toggle" id="password-toggle">
+                                        <span class="show-text">👁️</span>
+                                        <span class="hide-text hidden">🙈</span>
+                                    </button>
+                                </div>
+                                <span class="error-message" id="password-error"></span>
+                                <div class="password-requirements">
+                                    <small>Password must be at least 8 characters long</small>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the <a href="#" class="terms-link">Terms of Service</a>
+                                </label>
+                                <span class="error-message" id="terms-error"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Have questions? We'd love to hear from you!</p>
+                </header>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>hello@animeworld.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div>
+                                <h4>Live Chat</h4>
+                                <p>Available 24/7</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div>
+                                <h4>Social Media</h4>
+                                <p>Follow us @animeworld</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Anime World</h4>
+                    <p>Your gateway to the amazing world of anime</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#popular">Popular</a></li>
+                        <li><a href="#genres">Genres</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Community</h5>
+                    <ul>
+                        <li><a href="#register">Join Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anime World. All rights reserved. Made with ❤️ for anime fans.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top hidden">
+        <span>↑</span>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html> 
